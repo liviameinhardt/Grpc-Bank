@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nbank.proto\"!\n\nClientInfo\x12\x13\n\x0b\x63lient_name\x18\x01 \x01(\t\"\'\n\rAccountNumber\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x01 \x01(\x05\"K\n\x0b\x41\x63\x63ountInfo\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x01 \x01(\x05\x12\x13\n\x0b\x63lient_name\x18\x02 \x01(\t\x12\x0f\n\x07\x62\x61lance\x18\x03 \x01(\x01\"\x18\n\x06Sucess\x12\x0e\n\x06status\x18\x01 \x01(\x05\"\x1a\n\x07\x42\x61lance\x12\x0f\n\x07\x62\x61lance\x18\x01 \x01(\x01\"7\n\rOperationInfo\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x01 \x01(\x05\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x05\x32\xe0\x01\n\x04\x42\x61nk\x12.\n\rCreateAccount\x12\x0b.ClientInfo\x1a\x0e.AccountNumber\"\x00\x12\x31\n\x0fGetAccoountInfo\x12\x0e.AccountNumber\x1a\x0c.AccountInfo\"\x00\x12(\n\nGetBalance\x12\x0e.AccountNumber\x1a\x08.Balance\"\x00\x12$\n\x07\x44\x65posit\x12\x0e.OperationInfo\x1a\x07.Sucess\"\x00\x12%\n\x08Withdraw\x12\x0e.OperationInfo\x1a\x07.Sucess\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nbank.proto\"!\n\nClientInfo\x12\x13\n\x0b\x63lient_name\x18\x01 \x01(\t\"\'\n\rAccountNumber\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x01 \x01(\x05\"\x1b\n\x0b\x41\x63\x63ountInfo\x12\x0c\n\x04info\x18\x01 \x01(\t\"\x18\n\x06Sucess\x12\x0e\n\x06status\x18\x01 \x01(\x05\"\x1a\n\x07\x42\x61lance\x12\x0f\n\x07\x62\x61lance\x18\x01 \x01(\x01\"7\n\rOperationInfo\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x01 \x01(\x05\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x05\x32\xe0\x01\n\x04\x42\x61nk\x12.\n\rCreateAccount\x12\x0b.ClientInfo\x1a\x0e.AccountNumber\"\x00\x12\x31\n\x0fGetAccoountInfo\x12\x0e.AccountNumber\x1a\x0c.AccountInfo\"\x00\x12(\n\nGetBalance\x12\x0e.AccountNumber\x1a\x08.Balance\"\x00\x12$\n\x07\x44\x65posit\x12\x0e.OperationInfo\x1a\x07.Sucess\"\x00\x12%\n\x08Withdraw\x12\x0e.OperationInfo\x1a\x07.Sucess\"\x00\x62\x06proto3')
 
 
 
@@ -75,13 +75,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ACCOUNTNUMBER._serialized_start=49
   _ACCOUNTNUMBER._serialized_end=88
   _ACCOUNTINFO._serialized_start=90
-  _ACCOUNTINFO._serialized_end=165
-  _SUCESS._serialized_start=167
-  _SUCESS._serialized_end=191
-  _BALANCE._serialized_start=193
-  _BALANCE._serialized_end=219
-  _OPERATIONINFO._serialized_start=221
-  _OPERATIONINFO._serialized_end=276
-  _BANK._serialized_start=279
-  _BANK._serialized_end=503
+  _ACCOUNTINFO._serialized_end=117
+  _SUCESS._serialized_start=119
+  _SUCESS._serialized_end=143
+  _BALANCE._serialized_start=145
+  _BALANCE._serialized_end=171
+  _OPERATIONINFO._serialized_start=173
+  _OPERATIONINFO._serialized_end=228
+  _BANK._serialized_start=231
+  _BANK._serialized_end=455
 # @@protoc_insertion_point(module_scope)

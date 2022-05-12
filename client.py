@@ -7,5 +7,5 @@ stub = bank_pb2_grpc.BankStub(channel)
 
 livia = stub.CreateAccount("Lívia")
 luiz = stub.CreateAccount("Luiz")
-
+ 
 print(livia)
