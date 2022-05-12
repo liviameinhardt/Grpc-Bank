@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+
+service Bank {
+
+  rpc CreateAccount(ClientInfo) returns (AccountNumber) {}
+  rpc GetAccoountInfo(AccountNumber) returns (AccountInfo) {}
+  rpc GetBalance(AccountNumber) returns (Balance) {}
+  rpc Deposit(OperationInfo) returns (Sucess) {}
+  rpc Withdraw(OperationInfo) returns (Sucess) {}
+
+}
+
+message ClientInfo {
+    string client_name = 1;
+}
+
+message AccountNumber {
+    int32 account_number = 1;
+}
+
+
+message AccountInfo {
+    int32 account_number = 1;
+    string client_name = 2;
+    double balance = 3;
+}
+
+
+message Sucess {
+    int32 status = 1;
+}
+
+
+message Balance {
+ double balance = 1;
+}
+
+message OperationInfo {
+    int32 account_number = 1;
+    int32 amount = 2;
+
+}
+
+// Compilar:
+// python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. bank.proto
