@@ -1,19 +1,20 @@
-from argon2 import PasswordHasher
-from bank_pb2_grpc import BankServicer
+import bank_pb2_grpc 
+import grpc
+from concurrent import futures
 
 class Client:
-    def __init__(self,num_conta:float,nome:str) -> None:
+    def __init__(self,num_conta,nome):
         self.conta = num_conta 
         self.nome = nome
         self.saldo = 0.0
 
 
-class Bank(BankServicer):
+class Bank(bank_pb2_grpc.BankServicer):
 
-    def __init__(self) -> None:
+    def __init__(self):
         self.clients = []
 
-    def get_new_account_number(self) -> int:
+    def get_new_account_number(self):
         return len(self.clients)+1
 
     def CreateAccount(self, request, context):
@@ -48,4 +49,13 @@ class Bank(BankServicer):
 
         else: return 0
     
+def serve():
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    bank_pb2_grpc.add_BankServicer_to_server(Bank(), server)
+    server.add_insecure_port('[::]:50051')
+    server.start()
+    server.wait_for_termination()
 
+if __name__ == "__main__":
+    print("Server Started")
+    serve()
